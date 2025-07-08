@@ -1,0 +1,206 @@
+/* #root {
+  padding: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+}
+h2 {
+  font-size: 20px;
+}
+
+section {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 6px 18px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin: 0 4px;
+}
+input {
+  padding: 5px;
+}
+input[type="text"] {
+  width: 70%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+li > div:last-child {
+  display: flex;
+  align-items: end;
+}
+
+.clock {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.advice {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.time {
+  padding: 0 40px;
+}
+.current {
+  background-color: rgb(230, 234, 255);
+} */
+
+/* 기본 세팅 */
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f6f5f3; /* 아이보리 톤 배경 */
+  color: #333333;
+}
+
+/* 전체 레이아웃 분리 */
+.layout-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 메인 (왼쪽) */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 400px;
+  gap: 1px;
+}
+
+.todo-section {
+  flex: 0 0 350px;
+  margin-left: 2rem;
+  padding: 1rem;
+  background-color: #f1f1ef;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #2c2c2c;
+}
+
+/* 조언 */
+.advice {
+  width: 100%;
+  max-width: 500px;
+  font-style: italic;
+  margin: 0.2rem 0;
+  color: #6c757d;
+  text-align: left;
+}
+
+/* 시계 */
+.clock {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #4f4f4f;
+}
+
+/* 버튼 공통 스타일 */
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #a3c4bc;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timer-change{
+  width: 300px;
+}
+
+button:hover {
+  background-color: #88ada6;
+}
+
+/* 타이머/스탑워치 출력 */
+.timer-display {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #2c2c2c;
+}
+
+/* 입력 필드 */
+input[type="text"],
+input[type="range"] {
+  padding: 0.5rem;
+  margin: 0.3rem 0;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  background-color: #ffffff;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 투두 리스트 */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0ee;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+li.current {
+  background-color: #b5c9c3;
+  color: #fff;
+}
+
+li div:first-child {
+  flex: 1;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 780px) {
+  .layout-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .todo-section {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
